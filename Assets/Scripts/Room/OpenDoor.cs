@@ -8,8 +8,6 @@ public class OpenDoor : MonoBehaviour
     Vector3[] _close=new Vector3[2];
     Vector3[] _open = new Vector3[2];
     float _posDoorY = 0f;
-    //float _closeDoorY= 0f ;
-    //float _openDoorY = 5.2f;
     public GameObject doorTrigger;
     public Renderer[] lampsRend;
     public float speedMove = 2f;
@@ -24,7 +22,6 @@ public class OpenDoor : MonoBehaviour
     public bool Enter = false;
 
     TriggerScript triggerScript;
-    // Start is called before the first frame update
     void Start()
     {
         _close[0]=Vector3.zero;
@@ -96,6 +93,33 @@ public class OpenDoor : MonoBehaviour
                     setColor('y');
                 }
             }
+            /*
+            _posDoorY = door[i].transform.position.y;
+            if(openDoor == 1)
+            { 
+                if(_posDoorY < _open[i].y)
+                { Open(i); }
+            }
+            if (openDoor == -1)
+            { 
+                if(_posDoorY > _close[0].y)
+                { Close(i);  }
+            }
+            else
+            {
+                if (_posDoorY > 0f && delay > 0)
+                {
+                    delay--;
+                    setColor('y');
+                }
+                if ( _posDoorY > 0f && delay < 1)
+                {
+                    delay = 300;
+                    openDoor = -1;
+                    setColor('y');
+                }
+            }
+             */
         }
     }
     void setColor(char ch)
@@ -120,6 +144,19 @@ public class OpenDoor : MonoBehaviour
     void Close(int index)
     {
         
+        door[index].transform.Translate(_close[index] * Time.deltaTime * speedMove);
+        if (door[index].transform.position.z == 0f) openDoorStatus = true;
+        SundMove.Play();
+    }
+    void OpenNew(int index)
+    {
+        door[index].transform.Translate(_open[index] * Time.deltaTime * speedMove);
+        if (door[index].transform.position.z == 0f) openDoorStatus = false;
+        SundMove.Play();
+    }
+    void CloseNew(int index)
+    {
+
         door[index].transform.Translate(_close[index] * Time.deltaTime * speedMove);
         if (door[index].transform.position.z == 0f) openDoorStatus = true;
         SundMove.Play();

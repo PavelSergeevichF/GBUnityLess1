@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spavnOBJs:
-  - {fileID: 6938437739196601485, guid: d93ab82c527f29042b484ccd5dab1820, type: 3}
-  - {fileID: 702597670503933244, guid: be48371e39f6a6a4cb945adb7996c345, type: 3}
+  - {fileID: 8968980011292684782, guid: d93ab82c527f29042b484ccd5dab1820, type: 3}
+  - {fileID: 8776695799294962121, guid: be48371e39f6a6a4cb945adb7996c345, type: 3}
   Position: {fileID: 0}
   onlyOneObj: 0
   delySpawnSet: 500

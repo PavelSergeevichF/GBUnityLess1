@@ -10,11 +10,14 @@ public class SpiderScript : MonoBehaviour
     public GameObject AttackTrigger;//атакую
     public GameObject HearTrigger;//слыну
     public GameObject WatchTrigger;//вижу
+    public int getDamagSizee=0;
+    public int health = 1;
     float PosY;
     public float SpeedMove = 2f;
     public float SpeedRun = 4f;
     public float SpeedRotate = 2f;
     public bool isMove = true;
+    bool isDead = false;
     public int delayAttackSet = 200;
     int delayAttack;
     public int delayMoveSet = 300;
@@ -29,6 +32,7 @@ public class SpiderScript : MonoBehaviour
                   triggerScriptAttac, 
                   triggerScriptWatch,
                   triggerScriptHear;
+    public WeaponPanel weaponPanel;
     void Start()
     {
         delayAttack = delayAttackSet;
@@ -41,23 +45,51 @@ public class SpiderScript : MonoBehaviour
         FPS = GameObject.FindGameObjectWithTag("FPSControllerTag");
         PosY = spider.transform.position.y;
         moveAnimation.Play("idle");
+        weaponPanel=GameObject.Find("WeaponPanel").GetComponent<WeaponPanel>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (delayAttack < delayAttackSet) { delayAttack++; }
+        GetDamageEnemy();
         Aktion();
     }
     void Aktion()
     {
-        if (triggerScriptWatch.Stay) Run();
-        else
-        { if (isMove) LookFor(); }
-        Attack();
-
+        if(!isDead)
+        {
+            if (triggerScriptWatch.Stay) Run();
+            else
+            { if (isMove) LookFor(); }
+            Attack();
+        }
     }
-    
+    void GetDamageEnemy()
+    { 
+        if(getDamagSizee>0)
+        {
+            health -= getDamagSizee;
+            getDamagSizee = 0;
+            if (health<=0)
+            {
+                if(getDamagSizee>30)
+                moveAnimation.Play("death2");
+                else
+                moveAnimation.Play("death1");
+                weaponPanel.checkFrag=true;
+                isDead = true;
+            }
+            else 
+            {
+                if (getDamagSizee > 30)
+                    moveAnimation.Play("hit2");
+                else
+                    moveAnimation.Play("hit1");
+                getDamagSizee = 0;
+            }
+        }
+    }
     void Attack()
     {
         
@@ -114,7 +146,6 @@ public class SpiderScript : MonoBehaviour
     void Run()
     {
         spider.transform.position += transform.forward * Time.deltaTime * SpeedRun;
-        //spider.transform.position.y = PosY;
         spider.transform.LookAt(FPS.transform);
     }
     void MoveAnimation()
@@ -128,11 +159,6 @@ public class SpiderScript : MonoBehaviour
     void JampAnimation()
     {
         moveAnimation.Play("walk");
-    }
-    void HitAnimation()
-    {
-        moveAnimation.Play("hit1");
-        //moveAnimation.Play("hit2");
     }
     void StopAnimation(int n)
     {
