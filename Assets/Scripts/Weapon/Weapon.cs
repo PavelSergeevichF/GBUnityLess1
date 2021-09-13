@@ -12,10 +12,12 @@ public class Weapon : MonoBehaviour
     public int[] loadWeapon = new int[numSize];
     public int[] timeLoadWeapon = new int[numSize];
     public int[] powerWeapon = new int[numSize];
+    public int SizeSelect = 1;
     public bool[] weapon = new bool[numSize];//4гранаты(10-13) 10 оружие (0-9)
     public string[] nameTakeObj =new string[numSize];
     public string[] nameTakeWeapon = new string[numSize];
     public int SetActivWeapon;
+    float scrollDate = 0;
     int sliderRedyActiv;
     public Slider sliderRedy;
     WeaponPanel weaponPanel;
@@ -44,9 +46,10 @@ public class Weapon : MonoBehaviour
     }
     void SetWeapon()
     {
-        SetActivWeapon += (int)(Input.GetAxis("Mouse ScrollWheel") * 2);
-        if (SetActivWeapon > numSize - 1) SetActivWeapon -= numSize;
-        if (SetActivWeapon < 0) SetActivWeapon += numSize;
+        scrollDate += Input.GetAxis("Mouse ScrollWheel")* SizeSelect;
+        if (scrollDate > numSize - 1) scrollDate -= numSize;
+        if (scrollDate < 0) scrollDate += numSize;
+        SetActivWeapon = (int)scrollDate;
     }
     void charge()
     {
@@ -91,13 +94,30 @@ public class Weapon : MonoBehaviour
     void SetTakeBull()
     {
         bulletGet[0]  = 10; bulletGet[1]  = 5;  bulletGet[2]  = 25; bulletGet[3]  = 30; bulletGet[4] = 7;
-        bulletGet[5]  = 5;  bulletGet[6]  = 40; bulletGet[7]  = 35; bulletGet[8]  = 2;  bulletGet[9] = 1;
-        bulletGet[10] = 3;  bulletGet[11] = 3;  bulletGet[12] = 2;  bulletGet[13] = 1;
+        bulletGet[5]  = 5;  bulletGet[6]  = 40; bulletGet[7]  = 35; bulletGet[8]  = 1;  bulletGet[9] = 1;
+        bulletGet[10] = 1;  bulletGet[11] = 1;  bulletGet[12] = 1;  bulletGet[13] = 1;
     }
     void SetTimeLoad()
     {
         timeLoadWeapon[0]= 40; timeLoadWeapon[1]= 35; timeLoadWeapon[2]= 3; timeLoadWeapon[3]= 5; timeLoadWeapon[4]= 60;
         timeLoadWeapon[5]= 80; timeLoadWeapon[6]= 6; timeLoadWeapon[7]= 10; timeLoadWeapon[8]= 90; timeLoadWeapon[9]= 110;
         timeLoadWeapon[10]= 60; timeLoadWeapon[11]= 60; timeLoadWeapon[12]= 50; timeLoadWeapon[13]= 50;
+    }
+    void WeaponName()
+    {
+        //0-пистолет
+        //1-пистолет
+        //2-автомат
+        //3-автомат
+        //4-дробавик
+        //5-дробавик
+        //6-пулимет
+        //7-пулимет
+        //8-ракетница
+        //9-ракетница
+        //10-граната
+        //11-граната
+        //12-граната
+        //13-граната
     }
 }

@@ -2319,6 +2319,7 @@ GameObject:
   - component: {fileID: 8968980011292684779}
   - component: {fileID: 8968980011292684780}
   - component: {fileID: 8968980011292684777}
+  - component: {fileID: 3987197266089244274}
   m_Layer: 0
   m_Name: spider_myOldOne
   m_TagString: EnemyTag
@@ -2437,6 +2438,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &3987197266089244274
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968980011292684782}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.65
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8968980011298941393
 GameObject:
   m_ObjectHideFlags: 0

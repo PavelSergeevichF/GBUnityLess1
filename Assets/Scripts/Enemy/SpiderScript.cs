@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpiderScript : MonoBehaviour
 {
@@ -21,11 +22,16 @@ public class SpiderScript : MonoBehaviour
     public int delayAttackSet = 200;
     int delayAttack;
     public int delayMoveSet = 300;
-    int delayMove;
-    bool Stay = false;
+    [SerializeField] int delayMove;
+    [SerializeField] bool Stay = false;
     float randomLookFor;
     float randomMove;
     float rotation;
+    [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Transform _target;
+    [SerializeField] int _targetPoint = 1;
+    [SerializeField] private Transform _target1;
+    [SerializeField] private Transform _target2;
 
     Animation moveAnimation;
     TriggerScript triggerScriptLong,
@@ -33,6 +39,11 @@ public class SpiderScript : MonoBehaviour
                   triggerScriptWatch,
                   triggerScriptHear;
     public WeaponPanel weaponPanel;
+    private void Awake()
+    {
+        _agent = GetComponent<NavMeshAgent>();
+        _target = _target1;
+    }
     void Start()
     {
         delayAttack = delayAttackSet;
@@ -46,6 +57,8 @@ public class SpiderScript : MonoBehaviour
         PosY = spider.transform.position.y;
         moveAnimation.Play("idle");
         weaponPanel=GameObject.Find("WeaponPanel").GetComponent<WeaponPanel>();
+        if (_target == null) return;
+        _agent.SetDestination(_target.position);
     }
 
     // Update is called once per frame
@@ -59,9 +72,10 @@ public class SpiderScript : MonoBehaviour
     {
         if(!isDead)
         {
+            MovePatrol();
             if (triggerScriptWatch.Stay) Run();
-            else
-            { if (isMove) LookFor(); }
+            //else
+            //{ if (isMove) LookFor(); }
             Attack();
         }
     }
@@ -143,10 +157,39 @@ public class SpiderScript : MonoBehaviour
             
         }
     }
+    
     void Run()
     {
         spider.transform.position += transform.forward * Time.deltaTime * SpeedRun;
         spider.transform.LookAt(FPS.transform);
+    }
+    void MovePatrol()
+    {
+        if ((
+            spider.transform.position.x < _target1.transform.position.x + 0.3 ||
+            spider.transform.position.x > _target1.transform.position.x - 0.3 ||
+            spider.transform.position.z < _target1.transform.position.z + 0.3 ||
+            spider.transform.position.z > _target1.transform.position.z - 0.3
+            ) && (_targetPoint == 1))
+        {
+            _target = _target2;
+            _targetPoint = 2;
+            _agent.SetDestination(_target.position);
+        }
+        else
+        { 
+            if(
+                spider.transform.position.x < _target2.transform.position.x + 0.3 ||
+                spider.transform.position.x > _target2.transform.position.x - 0.3 ||
+                spider.transform.position.z < _target2.transform.position.z + 0.3 ||
+                spider.transform.position.z > _target2.transform.position.z - 0.3
+                )
+            {
+                _target = _target1;
+                _targetPoint = 1;
+                _agent.SetDestination(_target.position);
+            }
+        }
     }
     void MoveAnimation()
     {

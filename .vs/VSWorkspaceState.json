@@ -3,9 +3,12 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Enemy",
     "\\Assets\\Scripts\\Room",
+    "\\Assets\\Scripts\\System",
+    "\\Assets\\Scripts\\UI",
     "\\Assets\\Scripts\\Weapon"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Room\\OpenDoor.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Enemy\\SpiderScript.cs",
   "PreviewInSolutionExplorer": false
 }
