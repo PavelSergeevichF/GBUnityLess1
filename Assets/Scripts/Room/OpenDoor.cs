@@ -65,6 +65,7 @@ public class OpenDoor : MonoBehaviour
             SundMove.Play();
         }
         door.transform.TransformPoint(doorObj.transform.position);
+        //door.transform.
         //door.transform.Translate(doorObj.transform.position * Time.deltaTime * speedMove);
     }
     void setColor(char ch)
