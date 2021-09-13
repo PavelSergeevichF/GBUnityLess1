@@ -64,7 +64,8 @@ public class OpenDoor : MonoBehaviour
             _ReadyPlaySound = false;
             SundMove.Play();
         }
-        door.transform.TransformPoint(doorObj.transform.position);
+        door.transform.position = Vector3.MoveTowards(door.transform.position, doorObj.transform.position,Time.deltaTime* speedMove);
+        //door.transform.TransformPoint(doorObj.transform.position);
         //door.transform.
         //door.transform.Translate(doorObj.transform.position * Time.deltaTime * speedMove);
     }
