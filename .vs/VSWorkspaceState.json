@@ -5,10 +5,8 @@
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\Enemy",
     "\\Assets\\Scripts\\Room",
-    "\\Assets\\Scripts\\System",
-    "\\Assets\\Scripts\\UI",
     "\\Assets\\Scripts\\Weapon"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Enemy\\SpiderScript.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Weapon\\BulletGrenade1.cs",
   "PreviewInSolutionExplorer": false
 }

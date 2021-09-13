@@ -23,12 +23,12 @@ public class SpawnWeapon : MonoBehaviour
     }
     void Spawn()
     {
-        if (weaponScript.bullet[weaponScript.SetActivWeapon] > 0)//loadWeapon[i] < timeLoadWeapon
+        if (weaponScript.bullet[weaponScript.SetActivWeapon] > 0)//
         {
             if (weaponScript.loadWeapon[weaponScript.SetActivWeapon] >= weaponScript.timeLoadWeapon[weaponScript.SetActivWeapon]) 
             {
                 weaponScript.loadWeapon[weaponScript.SetActivWeapon] = 0;
-                GameObject Shell = Instantiate(spavnOBJs[0], transform.position, transform.rotation) as GameObject;
+                GameObject Shell = Instantiate(spavnOBJs[weaponScript.SetActivWeapon], transform.position, transform.rotation) as GameObject;
                 weaponScript.bullet[weaponScript.SetActivWeapon]--;
             }
         }

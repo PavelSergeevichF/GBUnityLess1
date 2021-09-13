@@ -66,11 +66,11 @@ public class Weapon : MonoBehaviour
         sliderRedyActiv = SetActivWeapon;
         sliderRedy.maxValue = timeLoadWeapon[SetActivWeapon];
     }
-    public void GetObj(string name)
+    public void GetObj(string nameObj)
     {
         for (int i = 0; i < nameTakeObj.Length; i++)
         {
-            if (name== nameTakeObj[i])
+            if (nameObj== nameTakeObj[i])
             {
                 bullet[i] += bulletGet[i];
                 if (bullet[i] > bulletMax[i]) bullet[i] = bulletMax[i];
@@ -78,7 +78,7 @@ public class Weapon : MonoBehaviour
         }
         for (int i = 0; i < nameTakeWeapon.Length; i++)
         {
-            if (name == nameTakeWeapon[i])
+            if (nameObj == nameTakeWeapon[i])
             {
                 if (!weapon[i]) weapon[i] = true;
             }

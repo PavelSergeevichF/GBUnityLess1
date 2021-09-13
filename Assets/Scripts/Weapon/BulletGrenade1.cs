@@ -67,7 +67,6 @@ public class BulletGrenade1 : MonoBehaviour
         { 
             contact = true;
             other.gameObject.GetComponent<SpiderScript>().getDamagSizee= damag;
-            // other.gameObject.GetComponent<SpiderScript>().getDamag = true;
         }
         if (!bullet) lifeTime = 20;
     }

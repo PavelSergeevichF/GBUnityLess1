@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Weapon\SpawnWeapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpiderScript.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\AimScript.cs" />
     <Compile Include="Assets\Scripts\Room\OpenDoor.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Assets\Models\fantasySpider\FSP_ContinuousRotation.cs" />
     <Compile Include="Assets\Scripts\System\TriggerScript.cs" />
     <Compile Include="Assets\Scripts\System\WeaponPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\AimScript.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Shoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
