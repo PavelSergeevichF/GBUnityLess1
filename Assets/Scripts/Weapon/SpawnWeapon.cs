@@ -7,6 +7,8 @@ public class SpawnWeapon : MonoBehaviour
 {
     public GameObject[] spavnOBJs;
     public GameObject Position;
+    public bool spawn = false;
+    public bool SotReady = true;
     public int delySpawnSet = 200;
     [SerializeField] int delySpawn;
     public Weapon weaponScript;
@@ -19,7 +21,11 @@ public class SpawnWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Mouse0)|| Input.GetKey(KeyCode.F)) Spawn();//Mouse0 Mouse1 Mouse2
+        if((Input.GetKey(KeyCode.Mouse0)|| spawn)&& SotReady) //Input.GetKey(KeyCode.F)
+        {
+            Spawn();//Mouse0 Mouse1 Mouse2
+            spawn = false;
+        }
     }
     void Spawn()
     {

@@ -502,13 +502,22 @@ MonoBehaviour:
   HearTrigger: {fileID: 8776695799981693197}
   WatchTrigger: {fileID: 8776695799589518056}
   getDamagSizee: 0
-  health: 20
+  StopingDistanc: 0.1
+  health: 6
   SpeedMove: 2
   SpeedRun: 4
   SpeedRotate: 4
   isMove: 1
+  isPatrul: 0
   delayAttackSet: 200
   delayMoveSet: 300
+  delayMove: 0
+  Stay: 0
+  _agent: {fileID: 0}
+  _target: {fileID: 0}
+  _targetPoint: 1
+  _target1: {fileID: 0}
+  _target2: {fileID: 0}
   weaponPanel: {fileID: 0}
 --- !u!111 &8776695799294962127
 Animation:
@@ -552,7 +561,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!195 &8350417618493162783
 NavMeshAgent:
@@ -561,7 +570,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8776695799294962121}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 2
   m_Speed: 3.5

@@ -12,12 +12,14 @@ public class SpiderScript : MonoBehaviour
     public GameObject HearTrigger;//слыну
     public GameObject WatchTrigger;//вижу
     public int getDamagSizee=0;
+    public float StopingDistanc = 0.1f;
     public int health = 1;
     float PosY;
     public float SpeedMove = 2f;
     public float SpeedRun = 4f;
     public float SpeedRotate = 2f;
     public bool isMove = true;
+    public bool isPatrul = false;
     bool isDead = false;
     public int delayAttackSet = 200;
     int delayAttack;
@@ -72,11 +74,23 @@ public class SpiderScript : MonoBehaviour
     {
         if(!isDead)
         {
-            MovePatrol();
+
             if (triggerScriptWatch.Stay) Run();
-            //else
-            //{ if (isMove) LookFor(); }
+            else
+            {
+                if (isPatrul) MovePatrol();
+                else
+                {
+                    Move(delayMove);
+                    delayMove--;
+                    if (delayMove < 0) delayMove = delayMoveSet;
+                }
+            }
             Attack();
+        }
+        if (isDead)
+        { 
+            Destroy(gameObject.GetComponent<NavMeshAgent>());
         }
     }
     void GetDamageEnemy()
@@ -145,7 +159,6 @@ public class SpiderScript : MonoBehaviour
         if (n == 1) { randomMove = Random.Range(0f, 10f); moveAnimation.Play("walk"); }
         if (randomMove < 5f)
         {
-            //transform.position+=transform.forward* Time.deltaTime*SpeedObj;
             spider.transform.position += transform.forward * Time.deltaTime * SpeedMove;
         }
         else

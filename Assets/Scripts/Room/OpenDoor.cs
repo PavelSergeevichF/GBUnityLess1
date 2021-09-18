@@ -12,8 +12,6 @@ public class OpenDoor : MonoBehaviour
     public float speedMove = 2f;
     public bool lockDoor = false;
     bool _ReadyPlaySound = true;
-    //public decimal openDoor = 0;
-    //int delay = 300;
     public AudioSource SundMove;
     public bool Stay = false;
     public bool Exit = false;
@@ -65,9 +63,7 @@ public class OpenDoor : MonoBehaviour
             SundMove.Play();
         }
         door.transform.position = Vector3.MoveTowards(door.transform.position, doorObj.transform.position,Time.deltaTime* speedMove);
-        //door.transform.TransformPoint(doorObj.transform.position);
-        //door.transform.
-        //door.transform.Translate(doorObj.transform.position * Time.deltaTime * speedMove);
+        
     }
     void setColor(char ch)
     {

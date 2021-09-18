@@ -310,11 +310,56 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Bolt.State.Editor">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>Assets\Ludiq\Assemblies\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Core.Editor">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Graphs.Editor">
+      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Core.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.5.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Ludiq.Graphs.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Platforms">
+      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Platforms.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>Assets\Ludiq\Assemblies\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Flow.Editor">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.Flow.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.5.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Core.Editor">
+      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.Flow.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MiscUtil">
+      <HintPath>Assets\Ludiq\Assemblies\MiscUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Ludiq.Core.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Bolt.State.Runtime">
+      <HintPath>Assets\Ludiq\Assemblies\Bolt.State.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>

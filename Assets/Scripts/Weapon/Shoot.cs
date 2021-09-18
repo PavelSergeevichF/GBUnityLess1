@@ -9,24 +9,26 @@ public class Shoot : MonoBehaviour
     public int SetlifeTime = 50;
     int lifeTime;
     bool contact = false;
+    new Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
         lifeTime = SetlifeTime;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Boolet();
-        
     }
     private void Boolet()
     {
         if (contact) Destroy(gameObject);
         if (lifeTime < 1) Destroy(gameObject, lifeTime);
         lifeTime--;
-        transform.position += transform.forward * speed * Time.fixedDeltaTime;
+        rigidbody.AddForce(transform.forward * speed, ForceMode.Impulse);
+        //transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
     private void OnTriggerEnter(Collider other)
     {

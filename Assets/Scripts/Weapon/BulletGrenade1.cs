@@ -8,13 +8,14 @@ public class BulletGrenade1 : MonoBehaviour
     public float speed = 10;
     float speedG = 10;
     public int SetlifeTime = 50;
-    int lifeTime ;
+    [SerializeField]int lifeTime ;
     int moveTime = 2;
     public bool bullet = true;
     public GameObject Flash;
     public GameObject FlashPartic;
     bool moveGr = true;
     bool contact = false;
+    bool setScale = true;
     new Renderer renderer;
     new Rigidbody rigidbody;
     // Start is called before the first frame update
@@ -45,16 +46,20 @@ public class BulletGrenade1 : MonoBehaviour
         {
             if (moveGr)
             {
-                moveTime--;
-                if (moveTime < 1) moveGr = false;
-                transform.position += transform.forward * speed * Time.fixedDeltaTime;
+                rigidbody.AddForce(transform.forward* speed,ForceMode.Impulse);
             }
             if (contact)
             {
                 lifeTime--;
+                if (setScale) 
+                {
+                    setScale = false;
+                    Vector3 setSize;
+                    setSize.x = 5; setSize.y = 5; setSize.z = 5;
+                    transform.localScale = setSize;
+                }
                 FlashPartic.SetActive(true);
                 Destroy(renderer);
-                Destroy(rigidbody);
                 if (lifeTime > 10) Flash.SetActive(true);
                 else Flash.SetActive(false);
                 if (lifeTime < 1) Destroy(gameObject);
@@ -68,6 +73,6 @@ public class BulletGrenade1 : MonoBehaviour
             contact = true;
             other.gameObject.GetComponent<SpiderScript>().getDamagSizee= damag;
         }
-        if (!bullet) lifeTime = 20;
+        if (!bullet&&!contact) lifeTime = 20;
     }
 }
