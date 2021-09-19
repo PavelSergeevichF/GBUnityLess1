@@ -8,6 +8,7 @@ TagManager:
   - EnemyTag
   - WeaponPanelTag
   - GetObjTag
+  - DestroyObjTag
   layers:
   - Default
   - TransparentFX

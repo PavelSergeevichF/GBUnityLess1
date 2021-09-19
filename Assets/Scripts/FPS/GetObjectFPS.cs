@@ -9,7 +9,7 @@ public class GetObjectFPS : MonoBehaviour
     [SerializeField]bool getObjNow = false;
     bool redySot = false;
     [SerializeField] bool StayGO = false;
-    int timePause;
+    [SerializeField] int timePause;
     public SpawnWeapon spawnWeapon;
     void Start()
     {
@@ -42,7 +42,7 @@ public class GetObjectFPS : MonoBehaviour
     }
     private void OnTriggerStay (Collider other)
     {
-        if (other.CompareTag("GetObjTag"))
+        if (other.CompareTag("GetObjTag")|| other.CompareTag("DestroyObjTag"))
         {
             StayGO = true;
             if (getObjNow)

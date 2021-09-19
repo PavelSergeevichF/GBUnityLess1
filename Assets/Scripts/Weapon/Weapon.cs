@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
     public int[] powerWeapon = new int[numSize];
     public int SizeSelect = 1;
     public bool[] weapon = new bool[numSize];//4гранаты(10-13) 10 оружие (0-9)
+    public bool[] FullWeapon = new bool[numSize];//4гранаты(10-13) 10 оружие (0-9)
+    public bool GetObjAmmun = false;
     public string[] nameTakeObj =new string[numSize];
     public string[] nameTakeWeapon = new string[numSize];
     public int SetActivWeapon;
@@ -31,7 +33,7 @@ public class Weapon : MonoBehaviour
         SetTimeLoad();
         SetActivWeapon = 10;
         int j = 0;
-        for(int i=0;i< numSize;i++) { loadWeapon[i]=0; }
+        for(int i=0;i< numSize;i++) { loadWeapon[i]=0; FullWeapon[i] = false; }
         sliderRedyActiv = SetActivWeapon;
         sliderRedy.maxValue = timeLoadWeapon[SetActivWeapon];
     }
@@ -46,10 +48,54 @@ public class Weapon : MonoBehaviour
     }
     void SetWeapon()
     {
+        float temp = scrollDate;
         scrollDate += Input.GetAxis("Mouse ScrollWheel")* SizeSelect;
-        if (scrollDate > numSize - 1) scrollDate -= numSize;
-        if (scrollDate < 0) scrollDate += numSize;
+        if (scrollDate > numSize - 1) 
+        { 
+            scrollDate -= numSize;
+        }
+        if (scrollDate < 0)
+        { 
+            scrollDate += numSize;
+        }
+        if (bullet[(int)scrollDate] < 1) { selectWeapon(temp< scrollDate, ref scrollDate); }
         SetActivWeapon = (int)scrollDate;
+    }
+    void selectWeapon(bool targ,ref float setWeapon)
+    {
+        if(targ)
+        {
+            for(int i=0;i< numSize;i++)
+            {
+                if (bullet[(int)setWeapon] < 1)
+                {
+                    setWeapon += 1;
+                    if (setWeapon > numSize - 1)
+                    {
+                        setWeapon -= numSize;
+                    }
+                }
+                else
+                { return; }
+            }
+            
+        }
+        else 
+        {
+            for (int i = 0; i < numSize; i++)
+            {
+                if (bullet[(int)setWeapon] < 1)
+                {
+                    setWeapon -= 1;
+                    if (setWeapon < 0)
+                    {
+                        setWeapon += numSize;
+                    }
+                }
+                else
+                { return; }
+            }
+        }
     }
     void charge()
     {
@@ -66,12 +112,14 @@ public class Weapon : MonoBehaviour
         sliderRedyActiv = SetActivWeapon;
         sliderRedy.maxValue = timeLoadWeapon[SetActivWeapon];
     }
-    public void GetObj(string nameObj)
+    public void GetAmmunition(string nameObj)
     {
         for (int i = 0; i < nameTakeObj.Length; i++)
         {
-            if (nameObj== nameTakeObj[i])
+            if ((bullet[i] >= bulletMax[i])&&!FullWeapon[i]) { FullWeapon[i] = true; }
+            if (nameObj== nameTakeObj[i]&& !FullWeapon[i])
             {
+                GetObjAmmun = true;
                 bullet[i] += bulletGet[i];
                 if (bullet[i] > bulletMax[i]) bullet[i] = bulletMax[i];
             }

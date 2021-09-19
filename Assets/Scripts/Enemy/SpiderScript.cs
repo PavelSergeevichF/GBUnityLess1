@@ -15,6 +15,7 @@ public class SpiderScript : MonoBehaviour
     public float StopingDistanc = 0.1f;
     public int health = 1;
     float PosY;
+    int timeOfDisappearance = 150;
     public float SpeedMove = 2f;
     public float SpeedRun = 4f;
     public float SpeedRotate = 2f;
@@ -30,7 +31,7 @@ public class SpiderScript : MonoBehaviour
     float randomMove;
     float rotation;
     [SerializeField] private NavMeshAgent _agent;
-    [SerializeField] private Transform _target;
+    private Transform _target;
     [SerializeField] int _targetPoint = 1;
     [SerializeField] private Transform _target1;
     [SerializeField] private Transform _target2;
@@ -40,7 +41,7 @@ public class SpiderScript : MonoBehaviour
                   triggerScriptAttac, 
                   triggerScriptWatch,
                   triggerScriptHear;
-    public WeaponPanel weaponPanel;
+    private WeaponPanel weaponPanel;
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -91,6 +92,8 @@ public class SpiderScript : MonoBehaviour
         if (isDead)
         { 
             Destroy(gameObject.GetComponent<NavMeshAgent>());
+            timeOfDisappearance--;
+            if(timeOfDisappearance<0) Destroy(gameObject);
         }
     }
     void GetDamageEnemy()

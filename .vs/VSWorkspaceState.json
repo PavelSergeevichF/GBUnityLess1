@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assets",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Enemy",
+    "\\Assets\\Scripts\\Room",
+    "\\Assets\\Scripts\\traps",
+    "\\Assets\\Scripts\\Weapon"
   ],
-  "SelectedNode": "\\GB_UnityProject1.sln",
+  "SelectedNode": "\\Assets\\Scripts\\Weapon\\Weapon.cs",
   "PreviewInSolutionExplorer": false
 }

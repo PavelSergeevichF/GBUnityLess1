@@ -9,14 +9,18 @@ public class TakeObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        weapon= GameObject.Find("WeaponObject").GetComponent<Weapon>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "FPSControllerTag")
         {
-            weapon.GetObj(name);
-            Destroy(gameObject);
+            weapon.GetAmmunition(name);
+            if (weapon.GetObjAmmun)
+            {
+                weapon.GetObjAmmun = false;
+                Destroy(gameObject);
+            }
         }
     }
 }

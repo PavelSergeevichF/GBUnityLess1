@@ -75,7 +75,8 @@ public class OpenDoor : MonoBehaviour
     
     void GetObject(Collider other, ref bool data)
     {
-        if (other.gameObject.name == "FPSControllerTag") data = true;
+        //if (other.gameObject.name == "FPSControllerTag") data = true;
+        if (other.gameObject.tag == "FPSControllerTag") data = true;
         else data = false;
     }
 }

@@ -459,12 +459,10 @@ MonoBehaviour:
   delayMoveSet: 300
   delayMove: 0
   Stay: 0
-  _agent: {fileID: 0}
-  _target: {fileID: 0}
+  _agent: {fileID: 6946737052262603291}
   _targetPoint: 1
   _target1: {fileID: 0}
   _target2: {fileID: 0}
-  weaponPanel: {fileID: 0}
 --- !u!54 &3119496517441658240
 Rigidbody:
   m_ObjectHideFlags: 0

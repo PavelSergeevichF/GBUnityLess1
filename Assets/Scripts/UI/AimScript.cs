@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AimScript : MonoBehaviour
 {
-    public GameObject[] Aim;
+    public GameObject[] Aim=new GameObject[14];
     public Weapon weapon;
     int _GetNum;
     int _num=0;

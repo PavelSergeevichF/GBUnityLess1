@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\FPS\GetObjectFPS.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
@@ -76,7 +77,9 @@
     <Compile Include="Assets\Models\fantasySpider\FSP_ContinuousRotation.cs" />
     <Compile Include="Assets\Scripts\System\TriggerScript.cs" />
     <Compile Include="Assets\Scripts\System\WeaponPanel.cs" />
-    <Compile Include="Assets\Scripts\FPS\GetObjectFPS.cs" />
+    <Compile Include="Assets\Scripts\Room\DestructibleObjects01.cs" />
+    <Compile Include="Assets\Scripts\traps\Trap01.cs" />
+    <Compile Include="Assets\Scripts\Room\OnEnemyTrig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />

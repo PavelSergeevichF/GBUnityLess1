@@ -36,6 +36,7 @@ public class SpawnWeapon : MonoBehaviour
                 weaponScript.loadWeapon[weaponScript.SetActivWeapon] = 0;
                 GameObject Shell = Instantiate(spavnOBJs[weaponScript.SetActivWeapon], transform.position, transform.rotation) as GameObject;
                 weaponScript.bullet[weaponScript.SetActivWeapon]--;
+                weaponScript.FullWeapon[weaponScript.SetActivWeapon] = false;
             }
         }
 

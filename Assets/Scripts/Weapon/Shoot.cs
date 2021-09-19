@@ -37,5 +37,10 @@ public class Shoot : MonoBehaviour
             contact = true;
             other.gameObject.GetComponent<SpiderScript>().getDamagSizee = damag;
         }
+        if (other.CompareTag("DestroyObjTag"))
+        {
+            contact = true;
+            other.gameObject.GetComponent<DestructibleObjects01>().Contact = true;
+        }
     }
 }
