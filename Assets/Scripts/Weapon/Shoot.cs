@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour
         if (other.CompareTag("EnemyTag"))
         {
             contact = true;
-            other.gameObject.GetComponent<SpiderScript>().getDamagSizee = damag;
+            other.gameObject.GetComponent<SpiderScript2>().getDamagSizee = damag;
         }
         if (other.CompareTag("DestroyObjTag"))
         {

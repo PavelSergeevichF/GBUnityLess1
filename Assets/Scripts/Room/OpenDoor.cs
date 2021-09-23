@@ -7,19 +7,26 @@ public class OpenDoor : MonoBehaviour
     public GameObject door;
     public GameObject targetOpen;
     public GameObject targetClose;
-    public GameObject doorTrigger;
+    //public GameObject doorTrigger;
+    public GameObject doorTrigger1;
+    public GameObject doorTrigger2;
     public Renderer[] lampsRend;
     public float speedMove = 2f;
     public bool lockDoor = false;
     bool _ReadyPlaySound = true;
+    [SerializeField] bool Open = false;
     public AudioSource SundMove;
     public bool Stay = false;
     public bool Exit = false;
     public bool Enter = false;
-    TriggerScript triggerScript;
+    //TriggerScript triggerScript;
+    TriggerScript triggerScript1;
+    TriggerScript triggerScript2;
     void Start()
     {
-        triggerScript = doorTrigger.GetComponent<TriggerScript>();
+        //triggerScript = doorTrigger.GetComponent<TriggerScript>();
+        triggerScript1 = doorTrigger1.GetComponent<TriggerScript>();
+        triggerScript2 = doorTrigger2.GetComponent<TriggerScript>();
         SundMove = GetComponent<AudioSource>();
     }
 
@@ -31,7 +38,9 @@ public class OpenDoor : MonoBehaviour
     {
         if (!lockDoor)
         {
-            if (triggerScript.Stay)
+            if (triggerScript1.Stay) { Open = true; }
+            if (triggerScript2.Stay) { Open = true; }
+            if (Open)
             {
                 //открытие
                 if (door.transform!= targetOpen.transform)
@@ -49,6 +58,7 @@ public class OpenDoor : MonoBehaviour
                 }
                 setColor('b');
             }
+            Open = false;
         }
         else
         {
@@ -75,7 +85,6 @@ public class OpenDoor : MonoBehaviour
     
     void GetObject(Collider other, ref bool data)
     {
-        //if (other.gameObject.name == "FPSControllerTag") data = true;
         if (other.gameObject.tag == "FPSControllerTag") data = true;
         else data = false;
     }

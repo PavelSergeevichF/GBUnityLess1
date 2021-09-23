@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5831157051722822050}
   - component: {fileID: 5831157051716726146}
   - component: {fileID: 5831157051729060804}
+  - component: {fileID: 3177756660890007226}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -175,6 +176,25 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831157051722363776}
   m_Enabled: 1
+--- !u!95 &3177756660890007226
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831157051722363776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f164ed29c81fdd94f86aa1c7fbfbe750, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5831157051722363778
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +531,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getObject: {fileID: 2847077787856540009}
+  SetTimePause: 5
+  getObjNow: 0
+  StayGO: 0
+  timePause: 0
+  spawnWeapon: {fileID: 0}
 --- !u!1 &7259958675364640090
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +661,7 @@ MonoBehaviour:
   - {fileID: 9016487690452658528, guid: 8327cd41e1468844e8eb6721aa202971, type: 3}
   Position: {fileID: 7259958675364640090}
   spawn: 0
+  SotReady: 1
   delySpawnSet: 200
   delySpawn: 0
   weaponScript: {fileID: 0}

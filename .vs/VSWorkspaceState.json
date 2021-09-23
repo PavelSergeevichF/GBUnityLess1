@@ -3,11 +3,14 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Enemy",
-    "\\Assets\\Scripts\\Room",
-    "\\Assets\\Scripts\\traps",
-    "\\Assets\\Scripts\\Weapon"
+    "\\Assets\\Scripts\\FPS",
+    "\\Assets\\Scripts\\System",
+    "\\Assets\\Scripts\\Weapon",
+    "\\Assets\\Standard Assets",
+    "\\Assets\\Standard Assets\\Characters",
+    "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter",
+    "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter\\Scripts"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Weapon\\Weapon.cs",
+  "SelectedNode": "\\Assets\\Scripts\\System\\SystemGame.cs",
   "PreviewInSolutionExplorer": false
 }
