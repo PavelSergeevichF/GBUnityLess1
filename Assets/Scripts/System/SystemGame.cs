@@ -6,6 +6,7 @@ public class SystemGame : MonoBehaviour
 {
     public GameObject MenuConvas;
     public GameObject GameConvas;
+    public GameObject SettingConvas;
     [SerializeField] bool _menu = false;
     int timeDelay = 30;
     bool getData = true;
@@ -38,21 +39,23 @@ public class SystemGame : MonoBehaviour
             if (_menu && getData) 
             {
                 getData = false;
-                _menu = false; 
+                _menu = false;
+                Cursor.visible = false;
             }
             ActivMenu();
         }
-        if (Input.GetKey(KeyCode.P)) { Application.Quit(); Debug.Log("Quit"); }
+        if (Input.GetKey(KeyCode.O)) { Application.Quit(); Debug.Log("Quit"); }
     }  
     void ClearConvas()
     {
         MenuConvas.SetActive(false);
         GameConvas.SetActive(false);
+        SettingConvas.SetActive(false);
     }
     void ActivMenu()
     {
         ClearConvas();
-        Cursor.visible = _menu;// включаем отображение курсора
+        Cursor.visible = true;// включаем отображение курсора
         if (_menu) Time.timeScale = 0;
         else Time.timeScale = _time;
         MenuConvas.SetActive(_menu);
@@ -66,6 +69,16 @@ public class SystemGame : MonoBehaviour
     public void Back()
     {
         _backInput = true;
+    }
+    public void GoBackFromSettings()
+    {
+        SettingConvas.SetActive(false);
+    }
+    public void GoFromSettings()
+    {
+
+        Cursor.visible = true;
+        SettingConvas.SetActive(true);
     }
     public void ExitGame()
     {

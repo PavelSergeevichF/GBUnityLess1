@@ -4,12 +4,9 @@
     "\\Assets",
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\Room",
-    "\\Assets\\Scripts\\Weapon",
-    "\\Assets\\Standard Assets",
-    "\\Assets\\Standard Assets\\Characters",
-    "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter",
-    "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter\\Scripts"
+    "\\Assets\\Scripts\\System",
+    "\\Assets\\Scripts\\UI"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Room\\Sparks.cs",
+  "SelectedNode": "\\Assets\\Scripts\\UI\\SettingSound.cs",
   "PreviewInSolutionExplorer": false
 }
