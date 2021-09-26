@@ -3,14 +3,13 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\FPS",
-    "\\Assets\\Scripts\\System",
+    "\\Assets\\Scripts\\Room",
     "\\Assets\\Scripts\\Weapon",
     "\\Assets\\Standard Assets",
     "\\Assets\\Standard Assets\\Characters",
     "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter",
     "\\Assets\\Standard Assets\\Characters\\FirstPersonCharacter\\Scripts"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\System\\SystemGame.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Room\\Sparks.cs",
   "PreviewInSolutionExplorer": false
 }

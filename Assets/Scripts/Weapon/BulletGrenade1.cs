@@ -18,12 +18,20 @@ public class BulletGrenade1 : MonoBehaviour
     bool setScale = true;
     new Renderer renderer;
     new Rigidbody rigidbody;
+    public GameObject CastSundObj;
+    public GameObject ContactSundObj;
+    public AudioSource CastSund;
+    public AudioSource ContactSund;
+    bool PlayCastSund = true;
+    bool PlayContactSund = true;
     // Start is called before the first frame update
     void Start()
     {
         lifeTime = SetlifeTime;
         renderer = GetComponent<MeshRenderer>();
         rigidbody = GetComponent<Rigidbody>();
+        CastSund = CastSundObj.GetComponent<AudioSource>();
+        ContactSund = ContactSundObj.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,12 +52,22 @@ public class BulletGrenade1 : MonoBehaviour
     {
         if (!bullet)
         {
+            if(PlayCastSund)
+            { 
+                PlayCastSund = false; 
+                CastSund.Play(); 
+            }
             if (moveGr)
             {
                 rigidbody.AddForce(transform.forward* speed,ForceMode.Impulse);
             }
             if (contact)
             {
+                if (PlayContactSund)
+                {
+                    PlayContactSund = false;
+                    ContactSund.Play();
+                }
                 lifeTime--;
                 if (setScale) 
                 {

@@ -10,11 +10,15 @@ public class Shoot : MonoBehaviour
     int lifeTime;
     bool contact = false;
     new Rigidbody rigidbody;
+    public AudioSource ShotSund;
+    bool PlaySund = true;
     // Start is called before the first frame update
     void Start()
     {
         lifeTime = SetlifeTime;
         rigidbody = GetComponent<Rigidbody>();
+        ShotSund = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -24,6 +28,8 @@ public class Shoot : MonoBehaviour
     }
     private void Boolet()
     {
+        if(PlaySund)
+        { PlaySund = false; ShotSund.Play(); }
         if (contact) Destroy(gameObject);
         if (lifeTime < 1) Destroy(gameObject, lifeTime);
         lifeTime--;

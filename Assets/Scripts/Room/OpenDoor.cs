@@ -7,7 +7,7 @@ public class OpenDoor : MonoBehaviour
     public GameObject door;
     public GameObject targetOpen;
     public GameObject targetClose;
-    //public GameObject doorTrigger;
+    public GameObject doorTrigger;
     public GameObject doorTrigger1;
     public GameObject doorTrigger2;
     public Renderer[] lampsRend;
@@ -19,12 +19,12 @@ public class OpenDoor : MonoBehaviour
     public bool Stay = false;
     public bool Exit = false;
     public bool Enter = false;
-    //TriggerScript triggerScript;
+    TriggerScript triggerScript;
     TriggerScript triggerScript1;
     TriggerScript triggerScript2;
     void Start()
     {
-        //triggerScript = doorTrigger.GetComponent<TriggerScript>();
+        triggerScript = doorTrigger.GetComponent<TriggerScript>();
         triggerScript1 = doorTrigger1.GetComponent<TriggerScript>();
         triggerScript2 = doorTrigger2.GetComponent<TriggerScript>();
         SundMove = GetComponent<AudioSource>();
@@ -38,27 +38,64 @@ public class OpenDoor : MonoBehaviour
     {
         if (!lockDoor)
         {
-            if (triggerScript1.Stay) { Open = true; }
-            if (triggerScript2.Stay) { Open = true; }
+            if (triggerScript.Enter) 
+            {
+                
+            }
+            if(triggerScript.Enter) 
+            {
+                if (_ReadyPlaySound)
+                {
+                    _ReadyPlaySound = false;
+                    SundMove.Play();
+                }
+                
+            }
+            if (triggerScript.Stay)
+            {
+                Open = true;
+            }
+            else
+            {
+                Open = false;
+            }
+            if (triggerScript.Exit) 
+            { 
+                Open = false; 
+            }
             if (Open)
             {
                 //открытие
-                if (door.transform!= targetOpen.transform)
+                if (door.transform != targetOpen.transform)
                 {
                     MoveDoor(targetOpen);
+                }
+                else
+                {
+                    _ReadyPlaySound = true;
                 }
                 setColor('g');
             }
             else
             {
+
                 //закрытие
                 if (door.transform != targetClose.transform)
                 {
+                    if (_ReadyPlaySound)
+                    {
+                        _ReadyPlaySound = false;
+                        SundMove.Play();
+                    }
                     MoveDoor(targetClose);
+                }
+                else 
+                {
+                    _ReadyPlaySound = true;
                 }
                 setColor('b');
             }
-            Open = false;
+            //Open = false;
         }
         else
         {
@@ -67,13 +104,7 @@ public class OpenDoor : MonoBehaviour
     }
     void MoveDoor(GameObject doorObj)
     {
-        if(_ReadyPlaySound)
-        {
-            _ReadyPlaySound = false;
-            SundMove.Play();
-        }
         door.transform.position = Vector3.MoveTowards(door.transform.position, doorObj.transform.position,Time.deltaTime* speedMove);
-        
     }
     void setColor(char ch)
     {
