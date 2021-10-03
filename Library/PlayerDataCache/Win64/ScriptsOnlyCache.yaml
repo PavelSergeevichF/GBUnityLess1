@@ -4,15 +4,24 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.Characters.FirstPerson.FirstPersonController
     Assembly-CSharp.dll:
     - AimScript
+    - AnimatorFPS
     - BulletGrenade1
     - DestructibleObjects01
     - GetObjectFPS
+    - MenuStart
     - OnEnemyTrig
     - OpenDoor
+    - PlayMusic
+    - PointOfView
+    - ScenLoad
+    - SettingSound
     - Shoot
+    - Sparks
     - SpawnEnemy
     - SpawnWeapon
     - SpiderScript
+    - SpiderScript2
+    - SystemGame
     - TakeObj
     - Trap01
     - TriggerScript
@@ -39,11 +48,14 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Level01.unity:
     - Class: 1
@@ -76,8 +88,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -97,45 +107,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1720}
+      Script: {instanceID: 1682}
     - Class: 114
-      Script: {instanceID: 1790}
+      Script: {instanceID: 1722}
     - Class: 114
-      Script: {instanceID: 1794}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 1970}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2142}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 2292}
+      Script: {instanceID: 1974}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2148}
     - Class: 114
-      Script: {instanceID: 2518}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2528}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2574}
+      Script: {instanceID: 2524}
     - Class: 114
-      Script: {instanceID: 3004}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 2894}
     - Class: 114
-      Script: {instanceID: 3802}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3956}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 4244}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 4516}
+      Script: {instanceID: 3306}
     - Class: 114
-      Script: {instanceID: 4558}
+      Script: {instanceID: 3314}
     - Class: 114
-      Script: {instanceID: 4796}
+      Script: {instanceID: 3328}
+    - Class: 114
+      Script: {instanceID: 3616}
+    - Class: 114
+      Script: {instanceID: 3668}
+    - Class: 114
+      Script: {instanceID: 3822}
+    - Class: 114
+      Script: {instanceID: 3976}
+    - Class: 114
+      Script: {instanceID: 4264}
+    - Class: 114
+      Script: {instanceID: 4460}
+    - Class: 114
+      Script: {instanceID: 4536}
+    - Class: 114
+      Script: {instanceID: 4578}
+    - Class: 114
+      Script: {instanceID: 4646}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -173,6 +201,128 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 238
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/Scenes/LoadScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1600}
+    - Class: 114
+      Script: {instanceID: 1602}
+    - Class: 114
+      Script: {instanceID: 1606}
+    - Class: 114
+      Script: {instanceID: 2472}
+    - Class: 114
+      Script: {instanceID: 2580}
+    - Class: 114
+      Script: {instanceID: 3772}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/StartScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1598}
+    - Class: 114
+      Script: {instanceID: 1600}
+    - Class: 114
+      Script: {instanceID: 1602}
+    - Class: 114
+      Script: {instanceID: 1606}
+    - Class: 114
+      Script: {instanceID: 1792}
+    - Class: 114
+      Script: {instanceID: 2472}
+    - Class: 114
+      Script: {instanceID: 2580}
+    - Class: 114
+      Script: {instanceID: 2894}
+    - Class: 114
+      Script: {instanceID: 3048}
+    - Class: 114
+      Script: {instanceID: 3616}
+    - Class: 114
+      Script: {instanceID: 3730}
+    - Class: 114
+      Script: {instanceID: 4646}
+    - Class: 114
+      Script: {instanceID: 4816}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -223,6 +373,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 7574405236754bee1629cda2f837d1b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SystemGame
   - hash:
       serializedVersion: 2
       Hash: be8b29ecd05b56bbfb5cc0e39b16c11b
@@ -327,6 +483,12 @@ ScriptsOnlyBuild:
     className: ButtonHandler
   - hash:
       serializedVersion: 2
+      Hash: 2364969788f660412583e900b1341bbe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatorFPS
+  - hash:
+      serializedVersion: 2
       Hash: 2be3207f909cb680b73dc42a256fb0c4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -343,6 +505,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: PlatformSpecificContent
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameMenu
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -663,6 +831,12 @@ ScriptsOnlyBuild:
     className: SmokeParticles
   - hash:
       serializedVersion: 2
+      Hash: c65d29ece4ce9ac714fefd23a19660aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingSound
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Characters.ThirdPerson
@@ -771,6 +945,12 @@ ScriptsOnlyBuild:
     className: Platformer2DUserControl
   - hash:
       serializedVersion: 2
+      Hash: c3d5323b65b767bfafb6579d952377e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpiderScript2
+  - hash:
+      serializedVersion: 2
       Hash: 59887b776ffa452d292f68085f5cd7c1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -855,10 +1035,16 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: aab6f08cf9a26239f9213f1aa579fa29
+      Hash: 239fc7f8fc3bccbe019b89fdaf818785
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OpenDoor
+  - hash:
+      serializedVersion: 2
+      Hash: f17b9fa745dabcc596cf1c0d674e1866
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PointOfView
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -981,6 +1167,12 @@ ScriptsOnlyBuild:
     className: ParticleSystemDestroyer
   - hash:
       serializedVersion: 2
+      Hash: 1f5ad44c15fc5ef25cc28cf174153846
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayMusic
+  - hash:
+      serializedVersion: 2
       Hash: 7e6b022cd7f1c29976ca8b1a21d06265
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityStandardAssets.SceneUtils
@@ -1023,6 +1215,12 @@ ScriptsOnlyBuild:
     className: MenuSceneLoader
   - hash:
       serializedVersion: 2
+      Hash: e7428baef5efdb25c0b3e4b9fc8f1b4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sparks
+  - hash:
+      serializedVersion: 2
       Hash: 47cd05cf11ce8beb2fd9a1522f58f5ec
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
@@ -1033,6 +1231,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 4ac6973830505e595f6bdd3b74c5ed96
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuStart
   - hash:
       serializedVersion: 2
       Hash: 74fdef42e5d1b91d250d09f9fc6f54da
@@ -1057,6 +1261,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Characters.FirstPerson
     className: RigidbodyFirstPersonController
+  - hash:
+      serializedVersion: 2
+      Hash: 55193fed7dc7eb02f68876f954e6295a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScenLoad
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1119,7 +1329,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: dfbcdb1da1edbdd64cd4dfcbc1585267
+      Hash: 53afe1dc9a95c561d38b6b6b4691cd37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shoot
@@ -1197,7 +1407,7 @@ ScriptsOnlyBuild:
     className: EventSystemChecker
   - hash:
       serializedVersion: 2
-      Hash: 3fde9b431f178ed9f866fd36c028584c
+      Hash: 91827594366cb168f9178f150781107b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BulletGrenade1
@@ -1269,7 +1479,7 @@ ScriptsOnlyBuild:
     className: CarAudio
   - hash:
       serializedVersion: 2
-      Hash: 2a926ea6863648f5ba2818c733e53aca
+      Hash: 663ab410f5cf89adc0e7b2d07c15f393
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TriggerScript
@@ -1681,13 +1891,9 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: SimpleActivatorMenu
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SystemGame
   platform: 19
   scenePathNames:
+  - Assets/Scenes/StartScene.unity
+  - Assets/Scenes/LoadScene.unity
   - Assets/Scenes/Level01.unity
   playerPath: D:/unityD/GB_Lesson/Relise/GB_Lesson01.exe

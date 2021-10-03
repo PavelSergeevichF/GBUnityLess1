@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapon\TakeObj.cs" />
     <Compile Include="Assets\Scripts\Weapon\SpawnWeapon.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingSound.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpiderScript.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpiderScript2.cs" />
@@ -76,20 +77,24 @@
     <Compile Include="Assets\Scripts\Room\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Enemy\PointOfView.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayMusic.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Scripts\Room\Sparks.cs" />
     <Compile Include="Assets\Scripts\System\MenuStart.cs" />
     <Compile Include="Assets\Scripts\System\ScenLoad.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\SpiderScript3.cs" />
     <Compile Include="Assets\Scripts\Weapon\Shoot.cs" />
     <Compile Include="Assets\Scripts\Weapon\BulletGrenade1.cs" />
     <Compile Include="Assets\Models\fantasySpider\FSP_ContinuousRotation.cs" />
     <Compile Include="Assets\Scripts\traps\Trap01.cs" />
     <Compile Include="Assets\Scripts\System\TriggerScript.cs" />
     <Compile Include="Assets\Scripts\System\WeaponPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\SettingSound.cs" />
-    <Compile Include="Assets\Scripts\UI\PlayMusic.cs" />
+    <Compile Include="Assets\Scripts\GUI\myGUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\MyAdvancedGUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\MyGUILayout.cs" />
+    <Compile Include="Assets\Scripts\GUI\MyIMGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />

@@ -3,10 +3,9 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Room",
-    "\\Assets\\Scripts\\System",
+    "\\Assets\\Scripts\\GUI",
     "\\Assets\\Scripts\\UI"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\UI\\SettingSound.cs",
+  "SelectedNode": "\\Assets\\Scripts\\GUI\\MyAdvancedGUI.cs",
   "PreviewInSolutionExplorer": false
 }
